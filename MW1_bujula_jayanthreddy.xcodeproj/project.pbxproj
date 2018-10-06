@@ -14,6 +14,7 @@
 		AA0C3BAA215FF07C005FB862 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA0C3BA8215FF07C005FB862 /* LaunchScreen.storyboard */; };
 		AA0C3BB5215FF07C005FB862 /* MW1_bujula_jayanthreddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0C3BB4215FF07C005FB862 /* MW1_bujula_jayanthreddyTests.swift */; };
 		AA0C3BC0215FF07C005FB862 /* MW1_bujula_jayanthreddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0C3BBF215FF07C005FB862 /* MW1_bujula_jayanthreddyUITests.swift */; };
+		AA141CE621605BF000DE3BE6 /* LapTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA141CE521605BF000DE3BE6 /* LapTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		AA0C3BBB215FF07C005FB862 /* MW1_bujula_jayanthreddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MW1_bujula_jayanthreddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0C3BBF215FF07C005FB862 /* MW1_bujula_jayanthreddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MW1_bujula_jayanthreddyUITests.swift; sourceTree = "<group>"; };
 		AA0C3BC1215FF07C005FB862 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA141CE521605BF000DE3BE6 /* LapTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				AA0C3BA6215FF07C005FB862 /* Assets.xcassets */,
 				AA0C3BA8215FF07C005FB862 /* LaunchScreen.storyboard */,
 				AA0C3BAB215FF07C005FB862 /* Info.plist */,
+				AA141CE521605BF000DE3BE6 /* LapTableViewController.swift */,
 			);
 			path = MW1_bujula_jayanthreddy;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				AA0C3BA2215FF07A005FB862 /* ViewController.swift in Sources */,
 				AA0C3BA0215FF07A005FB862 /* AppDelegate.swift in Sources */,
+				AA141CE621605BF000DE3BE6 /* LapTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
