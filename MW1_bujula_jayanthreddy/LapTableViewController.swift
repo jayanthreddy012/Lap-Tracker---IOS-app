@@ -9,23 +9,26 @@
 import UIKit
 
 class LapTableViewController: UITableViewController {
-    var averagetime = 0
+    // average lap time
+    var averagetime:Float = 0
     var displayaverageinformat : String = "0"
     var myDataSource: [(lap: String, time: String?)] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        // display average lap value on the bar item
         displayaverageinformat = timeString(time: TimeInterval(averagetime))
         let averagelaptime = UIBarButtonItem(title: "Average Lap Time : \(displayaverageinformat)",style: .plain,target: self, action: nil)
         let flex = UIBarButtonItem(barButtonSystemItem:.flexibleSpace, target: self, action: nil)
         self.toolbarItems = [flex, averagelaptime, flex]
         
     }
-
+    // convert time to hours, minutes, sec, milli sec format
     func timeString(time:TimeInterval) -> String {
+        let ms = Int(time*10)%10
         let hours = Int(time) / 3600
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
-        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+        return String(format: "%02d:%02d:%02d.%d", hours, minutes, seconds, ms)
         
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,7 +41,7 @@ class LapTableViewController: UITableViewController {
         return myDataSource.count
     }
 
-    
+    // inject values into table cells
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "my table identifier", for: indexPath)
         cell.textLabel?.text = myDataSource[indexPath[1]].lap + "  " + myDataSource[indexPath[1]].time!
