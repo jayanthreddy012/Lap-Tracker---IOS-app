@@ -17,30 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="l4f-1h-Yif">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="image courtesy: Flaticon.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opL-ij-g6J">
-                                <rect key="frame" x="95" y="695" width="225" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1S-pi-yG6">
-                                <rect key="frame" x="92" y="26" width="231" height="161"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Lap Tracker" image="running-logo">
-                                    <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="logoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LvU-fX-9Vd"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yez-dJ-fTt">
-                                <rect key="frame" x="67.666666666666686" y="273" width="279" height="279"/>
+                                <rect key="frame" x="68" y="273" width="279" height="279"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <state key="normal" title="Button" image="start-timer"/>
@@ -50,27 +28,44 @@
                                     <outletCollection property="gestureRecognizers" destination="G9z-PY-33S" appends="YES" id="cWu-PZ-vuI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvE-jh-6zE">
-                                <rect key="frame" x="133" y="50" width="154" height="109"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="image courtesy: Flaticon.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opL-ij-g6J">
+                                <rect key="frame" x="95" y="695" width="225" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                <state key="normal" title="Lap Tracker" image="new-lap">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="WdG-Fi-ic5">
+                                <rect key="frame" x="127.00000000000001" y="597" width="153.33333333333334" height="80.666666666666671"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lap Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgP-MV-P9Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="153.33333333333334" height="25.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTZ-Pz-kdm">
+                                        <rect key="frame" x="0.0" y="44.666666666666664" width="153.33333333333334" height="35.999999999999993"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1S-pi-yG6">
+                                <rect key="frame" x="92" y="29" width="231" height="137"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" image="running-logo">
                                     <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="newLapaction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mzw-pK-t68"/>
+                                    <action selector="logoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qHc-FU-Acn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kl4-kq-Zt9">
-                                <rect key="frame" x="67.666666666666686" y="273" width="279" height="279"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="stop-timer"/>
-                                <connections>
-                                    <action selector="stopButtonaction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Jh-cm-IqS"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="124" translatesAutoresizingMaskIntoConstraints="NO" id="La5-yE-QJS">
-                                <rect key="frame" x="20" y="174" width="366" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="131" translatesAutoresizingMaskIntoConstraints="NO" id="wnH-UA-W34">
+                                <rect key="frame" x="21" y="174" width="373" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DO6-Ij-P2e" userLabel="lap number">
@@ -91,10 +86,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fkq-yH-9ws" userLabel="total time">
-                                        <rect key="frame" x="252.66666666666666" y="0.0" width="113.33333333333334" height="60"/>
+                                        <rect key="frame" x="259.66666666666669" y="0.0" width="113.33333333333331" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rw-7X-rdc">
-                                                <rect key="frame" x="6.3333333333333428" y="0.0" width="107" height="25.666666666666668"/>
+                                                <rect key="frame" x="6.3333333333333144" y="0.0" width="107" height="25.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -109,40 +104,18 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H2r-97-Rr8" userLabel="lap time">
-                                <rect key="frame" x="131" y="615" width="153.33333333333334" height="71.666666666666671"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lap Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgP-MV-P9Q">
-                                        <rect key="frame" x="30.999999999999993" y="0.0" width="91.333333333333314" height="25.666666666666668"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTZ-Pz-kdm">
-                                        <rect key="frame" x="0.0" y="35.666666666666664" width="153.33333333333334" height="35.999999999999993"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="5DG-Gi-24O"/>
                     <connections>
-                        <outlet property="currentlapno" destination="zIj-MM-j6F" id="sAz-zs-Z3A"/>
+                        <outlet property="buttonOutlet" destination="Yez-dJ-fTt" id="VBD-xx-1FE"/>
+                        <outlet property="currentlapno" destination="zIj-MM-j6F" id="7QY-B4-AZM"/>
                         <outlet property="doubletap" destination="G9z-PY-33S" id="yKA-vC-S3Y"/>
-                        <outlet property="lapsview" destination="X1S-pi-yG6" id="XPa-s4-2bl"/>
-                        <outlet property="laptimeOutlet" destination="BTZ-Pz-kdm" id="BHX-Ue-Fx1"/>
-                        <outlet property="logoOutlet" destination="X1S-pi-yG6" id="SjW-IG-tAr"/>
-                        <outlet property="newLapoutlet" destination="RvE-jh-6zE" id="2fy-Tu-qHa"/>
-                        <outlet property="newlap" destination="RvE-jh-6zE" id="RXl-3r-G1U"/>
+                        <outlet property="laptimeOutlet" destination="BTZ-Pz-kdm" id="ojn-NO-AfC"/>
+                        <outlet property="logoOutlet" destination="X1S-pi-yG6" id="JCV-M0-SsQ"/>
                         <outlet property="singletap" destination="Bl9-I0-Pjl" id="LGD-RE-vYP"/>
-                        <outlet property="startButtonoutlet" destination="Yez-dJ-fTt" id="7Yj-sH-5Vt"/>
-                        <outlet property="stopbuttonoutlet" destination="Kl4-kq-Zt9" id="bqL-XT-O86"/>
                         <outlet property="totaltime" destination="yO8-Hi-Z6k" id="nbj-ji-cw9"/>
                         <segue destination="HuX-4v-4vy" kind="show" identifier="laptable" id="aPh-pc-WVT"/>
                     </connections>
@@ -216,10 +189,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="183" height="275"/>
-        <image name="new-lap" width="152" height="79"/>
-        <image name="running-logo" width="510" height="512"/>
+        <image name="running-logo" width="506" height="512"/>
         <image name="start-timer" width="512" height="512"/>
-        <image name="stop-timer" width="512" height="512"/>
     </resources>
 </document>

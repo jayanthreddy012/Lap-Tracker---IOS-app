@@ -12,21 +12,22 @@ class ViewController: UIViewController {
      var DataSource: [(lap: String, time: String?)] = []
     var timeobject: [Double] = []
     
-    @IBOutlet weak var laptimeOutlet: UILabel!
-    @IBOutlet weak var newlap: UIButton!
-    @IBOutlet weak var lapsview: UIButton!
-    @IBOutlet weak var currentlapno: UILabel!
-    @IBOutlet weak var stopbuttonoutlet: UIButton!
-    @IBOutlet weak var startButtonoutlet: UIButton!
     @IBOutlet weak var logoOutlet: UIButton!
+    @IBOutlet weak var currentlapno: UILabel!
+    
+    @IBOutlet weak var buttonOutlet: UIButton!
+    @IBOutlet weak var laptimeOutlet: UILabel!
     var timer = Timer()
     var isTimerRunning = false
     var total_time = 0
     var lap_time = 0
     var lappresent = 0
+    var startstop = 0
+    var logobutton = 0
     @IBOutlet var doubletap: UITapGestureRecognizer!
     @IBOutlet var singletap: UITapGestureRecognizer!
-    @IBOutlet weak var newLapoutlet: UIButton!
+    
+    
     @IBOutlet weak var totaltime: UILabel!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -34,14 +35,7 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        stopbuttonoutlet.isEnabled = false
-        stopbuttonoutlet.isHidden = true
-        newLapoutlet.isEnabled = false
-        newLapoutlet.isHidden = true
-        newlap.isEnabled = false
-        newlap.isHidden = true
         singletap.require(toFail: doubletap)
-        print(startButtonoutlet.imageView!.tag)
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -49,6 +43,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func logoAction(_ sender: UIButton) {
+        if logobutton == 0{
         for data in DataSource{
             if data.lap == "Lap \(currentlapno.text!)"{
                 lappresent = 1
@@ -63,7 +58,12 @@ class ViewController: UIViewController {
             DataSource.append(("Lap \(currentlapno.text!)", laptimeOutlet.text))
             performSegue(withIdentifier: "laptable", sender: DataSource)
         }
-        
+        } else{
+            
+            DataSource.append(("Lap \(currentlapno.text!)", laptimeOutlet.text))
+            currentlapno.text = String(Int(currentlapno.text!)!+1)
+            lap_time=0
+        }
         
     }
  
@@ -81,49 +81,38 @@ class ViewController: UIViewController {
             }
     }
     
-    @IBAction func newLapaction(_ sender: UIButton) {
-        DataSource.append(("Lap \(currentlapno.text!)", laptimeOutlet.text))
-        currentlapno.text = String(Int(currentlapno.text!)!+1)
-        lap_time=0
-        
-    }
-    @IBAction func stopButtonaction(_ sender: UIButton) {
-        startButtonoutlet.isEnabled = true
-        startButtonoutlet.isHidden = false
-        stopbuttonoutlet.isEnabled = false
-        stopbuttonoutlet.isHidden = true
-        
-        logoOutlet.isEnabled = true
-        logoOutlet.isHidden = false
-        newLapoutlet.isEnabled = false
-        newLapoutlet.isHidden = true
-        timer.invalidate()
-        
-    }
+   
+
     @IBAction func startdoubletapAction(_ sender: UITapGestureRecognizer) {
+        if startstop == 0 {
         DataSource = []
         lap_time = 0
         total_time = 0
         totaltime.text = "00:00:00.0"
         currentlapno.text = "0"
         laptimeOutlet.text = "00:00:00.0"
-        
+        }
         
     }
     @IBAction func startsingletapAction(_ sender: UITapGestureRecognizer) {
-        startButtonoutlet.isEnabled = false
-        startButtonoutlet.isHidden = true
-        stopbuttonoutlet.isEnabled = true
-        stopbuttonoutlet.isHidden = false
         
-        logoOutlet.isEnabled = false
-        logoOutlet.isHidden = true
-        newLapoutlet.isEnabled = true
-        newLapoutlet.isHidden = false
-        if currentlapno.text == "0"{
-            currentlapno.text = "1"
-        }
+        if startstop == 0 {
+            if currentlapno.text == "0"{
+                currentlapno.text = "1"
+            }
+        buttonOutlet.setImage(UIImage(named: "stop-timer.png")!, for: .normal)
+        logoOutlet.setImage(UIImage(named: "new-lap.png")!, for: .normal)
+        startstop = 1
+        logobutton = 1
+        
         runTimer()
+        } else{
+            buttonOutlet.setImage(UIImage(named: "start-timer.png")!, for: .normal)
+            logoOutlet.setImage(UIImage(named: "running-logo.png")!, for: .normal)
+            startstop = 0
+            logobutton = 0
+            timer.invalidate()
+        }
         
     }
     
